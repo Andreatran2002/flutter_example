@@ -1,7 +1,9 @@
+import 'package:provider/provider.dart';
 import 'package:stream_channel/stream_channel.dart' as stream;
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+import 'module/search/search_bloc.dart';
 import 'module/search/search_view.dart';
 void main()=>runApp(MyApp());
 
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
       title : 'App Demo',
       home: Scaffold(
         appBar : AppBar(title: Text("Deomo bloc")),
-        body : SearchView()
+        body : Provider<SearchBloc>.value(
+            value: SearchBloc(),
+            child : SearchView())
       )
     );
   }

@@ -7,7 +7,6 @@ import 'search_result.dart';
 
 class SearchView extends StatelessWidget {
   SearchView({Key? key}) : super(key: key);
-  final SearchBloc searchBloc = SearchBloc();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,8 +14,8 @@ class SearchView extends StatelessWidget {
       child : Column(
 
         children: [
-          SearchBox(bloc: searchBloc,),
-          Expanded(child: Result(bloc: searchBloc,))
+          SearchBox(),
+          Expanded(child: Result())
         ],
       )
     );
